@@ -13,9 +13,9 @@
 
 .container {
   background: var(--white);
-  width: 100%;
-  max-width: 400px;
-  padding: 2rem 3rem;
+  width: 50%;
+  max-width: 700px;
+  padding: 1rem 2rem;
   border-radius: 5px;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
   text-align: center;
@@ -28,11 +28,13 @@
   color: var(--blue);
   background: url("/icons/levelup.svg") no-repeat center center;
   background-size: contain;
+  margin-right: 50px;
 }
 
 .container strong {
-  font-size: 2.25rem;
+  font-size: 1.5rem;
   color: var(--title);
+  margin-right: 50px;
 }
 
 .container p {
@@ -41,11 +43,49 @@
   margin-top: 0.25rem;
 }
 
-.container button {
+.closeModal {
   position: absolute;
   right: 0.5rem;
   top: 0.5rem;
   background: transparent;
   border: 0;
   font-size: 0;
+}
+
+.sharedOnTwitter {
+  display: flex;
+  width: 38%;
+  flex-direction: row;
+  margin: 0px auto;
+  color: var(--white);
+  background: #2aa9e0;
+  margin-top: 15px;
+  padding: 1rem;
+  border: 0 none;
+  outline: 0;
+}
+
+.sharedOnTwitter img {
+  margin-left: 5px;
+}
+
+.avancedLevelUpModal {
+  display: inline-block;
+}
+
+.challengesCompleted {
+  display: inline;
+  float: right;
+  margin-top: 50px;
+}
+
+.challengesCompleted span {
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.challengesCompleted p {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
 }
