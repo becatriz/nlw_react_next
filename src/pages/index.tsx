@@ -1,62 +1,57 @@
 import Head from "next/head";
+import { useState } from "react";
 
-import { GetServerSideProps } from "next";
+import styles from "../styles/components/Login.module.css";
 
-import { CompletedChallenges } from "../components/CompletedChallenges";
-import { ChallengeBox } from "../components/ChallengeBox";
-import { Countdown } from "../components/Countdown";
-import { ExperienceBar } from "../components/ExperienceBar";
-import { Profile } from "../components/Profile";
-
-import styles from "../styles/pages/Home.module.css";
-import { CountdownProvider } from "../contexts/CountdownContext";
-import { ChallengesProvider } from "../contexts/ChallengesContexts";
-
-interface HomeProps {
-  level: number,
-  currentExperience: number,
-  challengesCompleted: number,
+interface LoginProps {
+  token: String;
 }
 
-export default function Home(props: HomeProps) {
+export default function Login(props: LoginProps) {
+  const [username, setUsername] = useState("");
+
+  function login() {
+    const ID_CLIENT = process.env.NEXT_PUBLIC_GIT_HUB_ID_CLIENT;
+    const URL_REDIRECT = process.env.NEXT_PUBLIC_GIT_HUB_REDIRECT_URL
+    
+    console.log(URL_REDIRECT);
+
+    if (username) {
+      window.location.href = `https://github.com/login/oauth/authorize?login=${username}&client_id=${ID_CLIENT}&redirect_uri=${URL_REDIRECT}&scope=read:user`;
+    } else {
+      alert("Insira seu username do Github");
+    }
+  }
+
   return (
-    <ChallengesProvider
-      level={props.level}
-      currentExperience={props.currentExperience}
-      challengesCompleted={props.challengesCompleted}
-    >
-      <div className={styles.container}>
-        <Head>
-          <title>Início | move.it</title>
-        </Head>
-        <ExperienceBar />
-        <CountdownProvider>
-          <section>
-            <div>
-              <Profile />
-              <CompletedChallenges />
-              <Countdown />
-            </div>
-            <div>
-              <ChallengeBox />
-            </div>
-          </section>
-        </CountdownProvider>
+    <div>
+      <Head>
+        <title>Login | move.it</title>
+      </Head>
+      <div className={styles.containerLogin}>
+        <div className={styles.containerBox}>
+          <img className={styles.imgMoveIt} src="/logo-full.svg" />
+          <p className={styles.logtinInitial}>Bem-vinde</p>
+          <img
+            className={styles.iconGithub}
+            src="/icons/github.svg"
+            alt="Icone Github"
+          />
+          <p className={styles.loginText}>
+            Faça login com seu Github para começar{" "}
+          </p>
+          <input
+            id="inputID"
+            placeholder="Digite seu username"
+            onChange={(e) => {
+              setUsername(e.target.value);
+            }}
+          />
+          <div className={styles.enterLogin} onClick={login}>
+            <img src="/icons/arrow.svg" alt="Icone seta para entrar" />
+          </div>
+        </div>
       </div>
-    </ChallengesProvider>
+    </div>
   );
 }
-
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  // Chamada da API aqui
-
-  const { level, currentExperience, challengesCompleted } = ctx.req.cookies;
-
-  return {
-    props: {
-      level: Number(level),
-      currentExperience: Number(currentExperience),
-      challengesCompleted: Number(challengesCompleted),
-    },
-  };
-};

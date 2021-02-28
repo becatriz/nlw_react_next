@@ -1,0 +1,93 @@
+.containerLogin {
+  width: 100vw;
+  height: 100vh;
+
+  background: #5965e0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerBox {
+  margin-left: 500px;
+}
+
+.imgMoveIt {
+  margin-bottom: 50px;
+}
+
+.logtinInitial {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 46px;
+  color: #ffffff;
+
+  margin-bottom: 15px;
+}
+
+.iconGithub {
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: -8px;
+}
+
+.loginText {
+  display: inline;
+  margin-left: 10px;
+  width: 12px;
+
+  color: #b2b9ff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.containerBox input {
+  display: flex;
+  flex-direction: column;
+  width: 340px;
+  height: 60px;
+  left: 820px;
+  top: 541px;
+  padding: 1rem;
+  margin-top: 15px;
+
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+
+  background: linear-gradient(90deg, #4953b8 0%, rgba(73, 83, 184, 0.2) 100%);
+  border-radius: 5px 0px 0px 5px;
+  color: var(--white);
+}
+
+#inputID::placeholder {
+  color: #b2b9ff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 34px;
+}
+
+.enterLogin {
+  display: flex;
+  margin-top: -59px;
+  margin-left: 300px;
+  width: 3.5rem;
+  height: 3.7rem;
+
+  cursor: pointer;
+
+  background: #4953b8;
+}
+
+.enterLogin img {
+  width: 1.5rem;
+  margin-left: 15px;
+}
