@@ -8,7 +8,7 @@ export default class MyDocument extends Document {
           <meta property="og:title" content="Moveit" key="title" />
           <meta
             property="og:image"
-            content="/logo-full_2.svg"
+            content="/favicon.png"
             key="title"
           />
           <link rel="shortcut icon" href="favicon.png" type="image/png" />

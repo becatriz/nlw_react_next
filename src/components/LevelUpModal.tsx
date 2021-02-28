@@ -35,7 +35,7 @@ export function LevelUpModal() {
         </button>
         <a
           className={styles.sharedOnTwitter}
-          href="https://twitter.com/intent/tweet?url=https://movieit-nlw4-8gxjtbzty-becatriz.vercel.app//&amp;text=Yupi!!! Completei mais um desafio&amp;"
+          href="https://twitter.com/intent/tweet?url=https://nlw-react-next.vercel.app/&amp;text=Yupi!!! Completei mais um desafio&amp;"
           
         >
           Compartilhar no Twitter
